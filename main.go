@@ -21,6 +21,13 @@ func main() {
 	}
 	fmt.Println("decoded", len(db.Items), "items")
 	for idx, item := range db.Items {
-		fmt.Printf("[%03d] %s\nUsername: %s\nPassword: %s\nURLs: %v\n\n", idx+1, item.Name, item.Login.Username, item.Login.Password, item.Login.Uris)
+		fmt.Printf("[%03d] %s\nUsername: %s\nPassword: %s\n",
+			idx+1,
+			item.Name,
+			item.Login.Username,
+			item.Login.Password)
+		fmt.Printf("URLs: %v\n", item.Login.Uris)
+		fmt.Printf("Created: %v\n", item.CreationDate)
+		fmt.Println()
 	}
 }
